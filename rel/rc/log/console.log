@@ -1,0 +1,105 @@
+2015-10-15 20:24:13.626 [info] <0.7.0> Application lager started on node 'rc@127.0.0.1'
+2015-10-15 20:24:13.628 [info] <0.7.0> Application crypto started on node 'rc@127.0.0.1'
+2015-10-15 20:24:13.638 [info] <0.7.0> Application riak_sysmon started on node 'rc@127.0.0.1'
+2015-10-15 20:24:13.664 [info] <0.7.0> Application os_mon started on node 'rc@127.0.0.1'
+2015-10-15 20:24:13.667 [info] <0.7.0> Application basho_stats started on node 'rc@127.0.0.1'
+2015-10-15 20:24:13.668 [info] <0.7.0> Application eleveldb started on node 'rc@127.0.0.1'
+2015-10-15 20:24:13.668 [info] <0.7.0> Application pbkdf2 started on node 'rc@127.0.0.1'
+2015-10-15 20:24:13.669 [info] <0.7.0> Application poolboy started on node 'rc@127.0.0.1'
+2015-10-15 20:24:13.724 [info] <0.110.0>@exometer_report:do_start_reporters:613 Starting reporters with []
+2015-10-15 20:24:13.725 [info] <0.7.0> Application exometer_core started on node 'rc@127.0.0.1'
+2015-10-15 20:24:13.752 [info] <0.7.0> Application clique started on node 'rc@127.0.0.1'
+2015-10-15 20:24:13.845 [error] <0.131.0> CRASH REPORT Process riak_core_handoff_listener with 1 neighbours exited with reason: bad return value: {error,eaddrinuse} in gen_server:init_it/6 line 332
+2015-10-15 20:24:13.848 [error] <0.130.0> Supervisor riak_core_handoff_listener_sup had child riak_core_handoff_listener started with riak_core_handoff_listener:start_link() at undefined exit with reason bad return value: {error,eaddrinuse} in context start_error
+2015-10-15 20:24:13.849 [error] <0.127.0> Supervisor riak_core_handoff_sup had child riak_core_handoff_listener_sup started with riak_core_handoff_listener_sup:start_link() at undefined exit with reason {shutdown,{failed_to_start_child,riak_core_handoff_listener,{bad_return_value,{error,eaddrinuse}}}} in context start_error
+2015-10-15 20:24:13.850 [error] <0.121.0> Supervisor riak_core_sup had child riak_core_handoff_sup started with riak_core_handoff_sup:start_link() at undefined exit with reason {shutdown,{failed_to_start_child,riak_core_handoff_listener_sup,{shutdown,{failed_to_start_child,riak_core_handoff_listener,{bad_return_value,{error,eaddrinuse}}}}}} in context start_error
+2015-10-15 20:24:13.852 [error] <0.119.0> CRASH REPORT Process <0.119.0> with 0 neighbours exited with reason: {{shutdown,{failed_to_start_child,riak_core_handoff_sup,{shutdown,{failed_to_start_child,riak_core_handoff_listener_sup,{shutdown,{failed_to_start_child,riak_core_handoff_listener,{bad_return_value,{error,eaddrinuse}}}}}}}},{riak_core_app,start,[normal,[]]}} in application_master:init/4 line 133
+2015-10-15 20:24:13.853 [info] <0.7.0> Application riak_core exited with reason: {{shutdown,{failed_to_start_child,riak_core_handoff_sup,{shutdown,{failed_to_start_child,riak_core_handoff_listener_sup,{shutdown,{failed_to_start_child,riak_core_handoff_listener,{bad_return_value,{error,eaddrinuse}}}}}}}},{riak_core_app,start,[normal,[]]}}
+2015-10-16 08:33:01.279 [info] <0.7.0> Application lager started on node 'rc@127.0.0.1'
+2015-10-16 08:33:01.282 [info] <0.7.0> Application crypto started on node 'rc@127.0.0.1'
+2015-10-16 08:33:01.296 [info] <0.7.0> Application riak_sysmon started on node 'rc@127.0.0.1'
+2015-10-16 08:33:01.333 [info] <0.7.0> Application os_mon started on node 'rc@127.0.0.1'
+2015-10-16 08:33:01.335 [info] <0.7.0> Application basho_stats started on node 'rc@127.0.0.1'
+2015-10-16 08:33:01.339 [info] <0.7.0> Application eleveldb started on node 'rc@127.0.0.1'
+2015-10-16 08:33:01.341 [info] <0.7.0> Application pbkdf2 started on node 'rc@127.0.0.1'
+2015-10-16 08:33:01.341 [info] <0.7.0> Application poolboy started on node 'rc@127.0.0.1'
+2015-10-16 08:33:01.423 [info] <0.110.0>@exometer_report:do_start_reporters:613 Starting reporters with []
+2015-10-16 08:33:01.423 [info] <0.7.0> Application exometer_core started on node 'rc@127.0.0.1'
+2015-10-16 08:33:01.459 [info] <0.7.0> Application clique started on node 'rc@127.0.0.1'
+2015-10-16 08:33:01.580 [error] <0.131.0> CRASH REPORT Process riak_core_handoff_listener with 1 neighbours exited with reason: bad return value: {error,eaddrinuse} in gen_server:init_it/6 line 332
+2015-10-16 08:33:01.580 [error] <0.130.0> Supervisor riak_core_handoff_listener_sup had child riak_core_handoff_listener started with riak_core_handoff_listener:start_link() at undefined exit with reason bad return value: {error,eaddrinuse} in context start_error
+2015-10-16 08:33:01.581 [error] <0.127.0> Supervisor riak_core_handoff_sup had child riak_core_handoff_listener_sup started with riak_core_handoff_listener_sup:start_link() at undefined exit with reason {shutdown,{failed_to_start_child,riak_core_handoff_listener,{bad_return_value,{error,eaddrinuse}}}} in context start_error
+2015-10-16 08:33:01.583 [error] <0.121.0> Supervisor riak_core_sup had child riak_core_handoff_sup started with riak_core_handoff_sup:start_link() at undefined exit with reason {shutdown,{failed_to_start_child,riak_core_handoff_listener_sup,{shutdown,{failed_to_start_child,riak_core_handoff_listener,{bad_return_value,{error,eaddrinuse}}}}}} in context start_error
+2015-10-16 08:33:01.583 [error] <0.119.0> CRASH REPORT Process <0.119.0> with 0 neighbours exited with reason: {{shutdown,{failed_to_start_child,riak_core_handoff_sup,{shutdown,{failed_to_start_child,riak_core_handoff_listener_sup,{shutdown,{failed_to_start_child,riak_core_handoff_listener,{bad_return_value,{error,eaddrinuse}}}}}}}},{riak_core_app,start,[normal,[]]}} in application_master:init/4 line 133
+2015-10-16 08:33:01.584 [info] <0.7.0> Application riak_core exited with reason: {{shutdown,{failed_to_start_child,riak_core_handoff_sup,{shutdown,{failed_to_start_child,riak_core_handoff_listener_sup,{shutdown,{failed_to_start_child,riak_core_handoff_listener,{bad_return_value,{error,eaddrinuse}}}}}}}},{riak_core_app,start,[normal,[]]}}
+2015-10-16 08:34:12.492 [info] <0.7.0> Application lager started on node 'rc@127.0.0.1'
+2015-10-16 08:34:12.494 [info] <0.7.0> Application crypto started on node 'rc@127.0.0.1'
+2015-10-16 08:34:12.509 [info] <0.7.0> Application riak_sysmon started on node 'rc@127.0.0.1'
+2015-10-16 08:34:12.542 [info] <0.7.0> Application os_mon started on node 'rc@127.0.0.1'
+2015-10-16 08:34:12.546 [info] <0.7.0> Application basho_stats started on node 'rc@127.0.0.1'
+2015-10-16 08:34:12.547 [info] <0.7.0> Application eleveldb started on node 'rc@127.0.0.1'
+2015-10-16 08:34:12.548 [info] <0.7.0> Application pbkdf2 started on node 'rc@127.0.0.1'
+2015-10-16 08:34:12.549 [info] <0.7.0> Application poolboy started on node 'rc@127.0.0.1'
+2015-10-16 08:34:12.613 [info] <0.110.0>@exometer_report:do_start_reporters:613 Starting reporters with []
+2015-10-16 08:34:12.614 [info] <0.7.0> Application exometer_core started on node 'rc@127.0.0.1'
+2015-10-16 08:34:12.643 [info] <0.7.0> Application clique started on node 'rc@127.0.0.1'
+2015-10-16 08:34:12.737 [error] <0.131.0> CRASH REPORT Process riak_core_handoff_listener with 1 neighbours exited with reason: bad return value: {error,eaddrinuse} in gen_server:init_it/6 line 332
+2015-10-16 08:34:12.738 [error] <0.130.0> Supervisor riak_core_handoff_listener_sup had child riak_core_handoff_listener started with riak_core_handoff_listener:start_link() at undefined exit with reason bad return value: {error,eaddrinuse} in context start_error
+2015-10-16 08:34:12.739 [error] <0.127.0> Supervisor riak_core_handoff_sup had child riak_core_handoff_listener_sup started with riak_core_handoff_listener_sup:start_link() at undefined exit with reason {shutdown,{failed_to_start_child,riak_core_handoff_listener,{bad_return_value,{error,eaddrinuse}}}} in context start_error
+2015-10-16 08:34:12.740 [error] <0.121.0> Supervisor riak_core_sup had child riak_core_handoff_sup started with riak_core_handoff_sup:start_link() at undefined exit with reason {shutdown,{failed_to_start_child,riak_core_handoff_listener_sup,{shutdown,{failed_to_start_child,riak_core_handoff_listener,{bad_return_value,{error,eaddrinuse}}}}}} in context start_error
+2015-10-16 08:34:12.742 [error] <0.119.0> CRASH REPORT Process <0.119.0> with 0 neighbours exited with reason: {{shutdown,{failed_to_start_child,riak_core_handoff_sup,{shutdown,{failed_to_start_child,riak_core_handoff_listener_sup,{shutdown,{failed_to_start_child,riak_core_handoff_listener,{bad_return_value,{error,eaddrinuse}}}}}}}},{riak_core_app,start,[normal,[]]}} in application_master:init/4 line 133
+2015-10-16 08:34:12.742 [info] <0.7.0> Application riak_core exited with reason: {{shutdown,{failed_to_start_child,riak_core_handoff_sup,{shutdown,{failed_to_start_child,riak_core_handoff_listener_sup,{shutdown,{failed_to_start_child,riak_core_handoff_listener,{bad_return_value,{error,eaddrinuse}}}}}}}},{riak_core_app,start,[normal,[]]}}
+2015-10-16 08:41:09.507 [info] <0.7.0> Application lager started on node 'rc@127.0.0.1'
+2015-10-16 08:41:09.512 [info] <0.7.0> Application crypto started on node 'rc@127.0.0.1'
+2015-10-16 08:41:09.538 [info] <0.7.0> Application riak_sysmon started on node 'rc@127.0.0.1'
+2015-10-16 08:41:09.584 [info] <0.7.0> Application os_mon started on node 'rc@127.0.0.1'
+2015-10-16 08:41:09.586 [info] <0.7.0> Application basho_stats started on node 'rc@127.0.0.1'
+2015-10-16 08:41:09.587 [info] <0.7.0> Application eleveldb started on node 'rc@127.0.0.1'
+2015-10-16 08:41:09.588 [info] <0.7.0> Application pbkdf2 started on node 'rc@127.0.0.1'
+2015-10-16 08:41:09.589 [info] <0.7.0> Application poolboy started on node 'rc@127.0.0.1'
+2015-10-16 08:41:09.702 [info] <0.110.0>@exometer_report:do_start_reporters:613 Starting reporters with []
+2015-10-16 08:41:09.703 [info] <0.7.0> Application exometer_core started on node 'rc@127.0.0.1'
+2015-10-16 08:41:09.764 [info] <0.7.0> Application clique started on node 'rc@127.0.0.1'
+2015-10-16 08:41:09.946 [error] <0.131.0> CRASH REPORT Process riak_core_handoff_listener with 1 neighbours exited with reason: bad return value: {error,eaddrinuse} in gen_server:init_it/6 line 332
+2015-10-16 08:41:09.947 [error] <0.130.0> Supervisor riak_core_handoff_listener_sup had child riak_core_handoff_listener started with riak_core_handoff_listener:start_link() at undefined exit with reason bad return value: {error,eaddrinuse} in context start_error
+2015-10-16 08:41:09.948 [error] <0.127.0> Supervisor riak_core_handoff_sup had child riak_core_handoff_listener_sup started with riak_core_handoff_listener_sup:start_link() at undefined exit with reason {shutdown,{failed_to_start_child,riak_core_handoff_listener,{bad_return_value,{error,eaddrinuse}}}} in context start_error
+2015-10-16 08:41:09.949 [error] <0.121.0> Supervisor riak_core_sup had child riak_core_handoff_sup started with riak_core_handoff_sup:start_link() at undefined exit with reason {shutdown,{failed_to_start_child,riak_core_handoff_listener_sup,{shutdown,{failed_to_start_child,riak_core_handoff_listener,{bad_return_value,{error,eaddrinuse}}}}}} in context start_error
+2015-10-16 08:41:09.949 [error] <0.119.0> CRASH REPORT Process <0.119.0> with 0 neighbours exited with reason: {{shutdown,{failed_to_start_child,riak_core_handoff_sup,{shutdown,{failed_to_start_child,riak_core_handoff_listener_sup,{shutdown,{failed_to_start_child,riak_core_handoff_listener,{bad_return_value,{error,eaddrinuse}}}}}}}},{riak_core_app,start,[normal,[]]}} in application_master:init/4 line 133
+2015-10-16 08:41:09.949 [info] <0.7.0> Application riak_core exited with reason: {{shutdown,{failed_to_start_child,riak_core_handoff_sup,{shutdown,{failed_to_start_child,riak_core_handoff_listener_sup,{shutdown,{failed_to_start_child,riak_core_handoff_listener,{bad_return_value,{error,eaddrinuse}}}}}}}},{riak_core_app,start,[normal,[]]}}
+2015-10-16 08:41:38.432 [info] <0.7.0> Application lager started on node 'rc@127.0.0.1'
+2015-10-16 08:41:38.435 [info] <0.7.0> Application crypto started on node 'rc@127.0.0.1'
+2015-10-16 08:41:38.445 [info] <0.7.0> Application riak_sysmon started on node 'rc@127.0.0.1'
+2015-10-16 08:41:38.477 [info] <0.7.0> Application os_mon started on node 'rc@127.0.0.1'
+2015-10-16 08:41:38.479 [info] <0.7.0> Application basho_stats started on node 'rc@127.0.0.1'
+2015-10-16 08:41:38.479 [info] <0.7.0> Application eleveldb started on node 'rc@127.0.0.1'
+2015-10-16 08:41:38.480 [info] <0.7.0> Application pbkdf2 started on node 'rc@127.0.0.1'
+2015-10-16 08:41:38.480 [info] <0.7.0> Application poolboy started on node 'rc@127.0.0.1'
+2015-10-16 08:41:38.555 [info] <0.110.0>@exometer_report:do_start_reporters:613 Starting reporters with []
+2015-10-16 08:41:38.555 [info] <0.7.0> Application exometer_core started on node 'rc@127.0.0.1'
+2015-10-16 08:41:38.590 [info] <0.7.0> Application clique started on node 'rc@127.0.0.1'
+2015-10-16 08:41:38.755 [warning] <0.135.0>@riak_core_ring_manager:reload_ring:355 No ring file available.
+2015-10-16 08:41:38.923 [error] <0.143.0> CRASH REPORT Process <0.143.0> with 0 neighbours exited with reason: no match of right hand value {error,{error_db_destroy,"IO error: ./data/cluster_meta/trees/LOCK: Permission denied"}} in hashtree:destroy/1 line 275 in gen_server:init_it/6 line 328
+2015-10-16 08:41:38.924 [error] <0.121.0> Supervisor riak_core_sup had child riak_core_metadata_hashtree started with riak_core_metadata_hashtree:start_link() at undefined exit with reason no match of right hand value {error,{error_db_destroy,"IO error: ./data/cluster_meta/trees/LOCK: Permission denied"}} in hashtree:destroy/1 line 275 in context start_error
+2015-10-16 08:41:38.925 [error] <0.119.0> CRASH REPORT Process <0.119.0> with 0 neighbours exited with reason: {{shutdown,{failed_to_start_child,riak_core_metadata_hashtree,{{badmatch,{error,{error_db_destroy,"IO error: ./data/cluster_meta/trees/LOCK: Permission denied"}}},[{hashtree,destroy,1,[{file,"src/hashtree.erl"},{line,275}]},{hashtree_tree,create_node,2,[{file,"src/hashtree_tree.erl"},{line,463}]},{hashtree_tree,new,2,[{file,"src/hashtree_tree.erl"},{line,193}]},{riak_core_metadata_hashtree,init,1,[{file,"src/riak_core_metadata_hashtree.erl"},{line,172}]},{gen_server,init_it,6,[{file,"gen_s..."},...]},...]}}},...} in application_master:init/4 line 133
+2015-10-16 08:41:38.927 [info] <0.7.0> Application riak_core exited with reason: {{shutdown,{failed_to_start_child,riak_core_metadata_hashtree,{{badmatch,{error,{error_db_destroy,"IO error: ./data/cluster_meta/trees/LOCK: Permission denied"}}},[{hashtree,destroy,1,[{file,"src/hashtree.erl"},{line,275}]},{hashtree_tree,create_node,2,[{file,"src/hashtree_tree.erl"},{line,463}]},{hashtree_tree,new,2,[{file,"src/hashtree_tree.erl"},{line,193}]},{riak_core_metadata_hashtree,init,1,[{file,"src/riak_core_metadata_hashtree.erl"},{line,172}]},{gen_server,init_it,6,[{file,"gen_s..."},...]},...]}}},...}
+2015-10-16 08:42:17.640 [info] <0.7.0> Application lager started on node 'rc@127.0.0.1'
+2015-10-16 08:42:17.642 [info] <0.7.0> Application crypto started on node 'rc@127.0.0.1'
+2015-10-16 08:42:17.652 [info] <0.7.0> Application riak_sysmon started on node 'rc@127.0.0.1'
+2015-10-16 08:42:17.678 [info] <0.7.0> Application os_mon started on node 'rc@127.0.0.1'
+2015-10-16 08:42:17.680 [info] <0.7.0> Application basho_stats started on node 'rc@127.0.0.1'
+2015-10-16 08:42:17.682 [info] <0.7.0> Application eleveldb started on node 'rc@127.0.0.1'
+2015-10-16 08:42:17.682 [info] <0.7.0> Application pbkdf2 started on node 'rc@127.0.0.1'
+2015-10-16 08:42:17.682 [info] <0.7.0> Application poolboy started on node 'rc@127.0.0.1'
+2015-10-16 08:42:17.747 [info] <0.110.0>@exometer_report:do_start_reporters:613 Starting reporters with []
+2015-10-16 08:42:17.747 [info] <0.7.0> Application exometer_core started on node 'rc@127.0.0.1'
+2015-10-16 08:42:17.803 [info] <0.7.0> Application clique started on node 'rc@127.0.0.1'
+2015-10-16 08:42:18.016 [warning] <0.135.0>@riak_core_ring_manager:reload_ring:355 No ring file available.
+2015-10-16 08:42:18.395 [info] <0.151.0>@riak_core_capability:process_capability_changes:555 New capability: {riak_core,vnode_routing} = proxy
+2015-10-16 08:42:18.401 [info] <0.151.0>@riak_core_capability:process_capability_changes:555 New capability: {riak_core,staged_joins} = true
+2015-10-16 08:42:18.406 [info] <0.151.0>@riak_core_capability:process_capability_changes:555 New capability: {riak_core,resizable_ring} = true
+2015-10-16 08:42:18.413 [info] <0.151.0>@riak_core_capability:process_capability_changes:555 New capability: {riak_core,fold_req_version} = v2
+2015-10-16 08:42:18.421 [info] <0.151.0>@riak_core_capability:process_capability_changes:555 New capability: {riak_core,security} = true
+2015-10-16 08:42:18.426 [info] <0.151.0>@riak_core_capability:process_capability_changes:555 New capability: {riak_core,bucket_types} = true
+2015-10-16 08:42:18.433 [info] <0.151.0>@riak_core_capability:process_capability_changes:555 New capability: {riak_core,net_ticktime} = true
+2015-10-16 08:42:18.585 [info] <0.7.0> Application riak_core started on node 'rc@127.0.0.1'
+2015-10-16 08:43:36.595 [info] <0.120.0>@riak_core_app:stop:114 Stopped  application riak_core.

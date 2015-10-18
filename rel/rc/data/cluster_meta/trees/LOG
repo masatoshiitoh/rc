@@ -1,0 +1,30 @@
+2015/10/16-08:42:18.181415 7fa1957ea700             Options.comparator: leveldb.InternalKeyComparator
+2015/10/16-08:42:18.181478 7fa1957ea700      Options.create_if_missing: 1
+2015/10/16-08:42:18.181493 7fa1957ea700        Options.error_if_exists: 0
+2015/10/16-08:42:18.181500 7fa1957ea700        Options.paranoid_checks: 0
+2015/10/16-08:42:18.181508 7fa1957ea700     Options.verify_compactions: 1
+2015/10/16-08:42:18.181515 7fa1957ea700                    Options.env: 0x7fa1a4002150
+2015/10/16-08:42:18.181522 7fa1957ea700               Options.info_log: 0x7fa1700028c0
+2015/10/16-08:42:18.181530 7fa1957ea700      Options.write_buffer_size: 9604337
+2015/10/16-08:42:18.181537 7fa1957ea700         Options.max_open_files: 1000
+2015/10/16-08:42:18.181545 7fa1957ea700            Options.block_cache: 0x7fa1700018d0
+2015/10/16-08:42:18.181552 7fa1957ea700             Options.block_size: 4096
+2015/10/16-08:42:18.181559 7fa1957ea700       Options.block_size_steps: 16
+2015/10/16-08:42:18.181566 7fa1957ea700 Options.block_restart_interval: 16
+2015/10/16-08:42:18.181573 7fa1957ea700            Options.compression: 1
+2015/10/16-08:42:18.181581 7fa1957ea700          Options.filter_policy: leveldb.BuiltinBloomFilter2
+2015/10/16-08:42:18.181589 7fa1957ea700              Options.is_repair: false
+2015/10/16-08:42:18.181596 7fa1957ea700         Options.is_internal_db: true
+2015/10/16-08:42:18.181604 7fa1957ea700      Options.total_leveldb_mem: 314824704
+2015/10/16-08:42:18.181611 7fa1957ea700  Options.block_cache_threshold: 33554432
+2015/10/16-08:42:18.181618 7fa1957ea700  Options.limited_developer_mem: false
+2015/10/16-08:42:18.181626 7fa1957ea700              Options.mmap_size: 0
+2015/10/16-08:42:18.181633 7fa1957ea700       Options.delete_threshold: 1000
+2015/10/16-08:42:18.181680 7fa1957ea700       Options.fadvise_willneed: false
+2015/10/16-08:42:18.181689 7fa1957ea700      Options.tiered_slow_level: 0
+2015/10/16-08:42:18.181697 7fa1957ea700     Options.tiered_fast_prefix: ./data/cluster_meta/trees
+2015/10/16-08:42:18.181704 7fa1957ea700     Options.tiered_slow_prefix: ./data/cluster_meta/trees
+2015/10/16-08:42:18.181711 7fa1957ea700                         crc32c: hardware
+2015/10/16-08:42:18.181719 7fa1957ea700                File cache size: 30129814
+2015/10/16-08:42:18.181727 7fa1957ea700               Block cache size: 32226966
+2015/10/16-08:42:18.196851 7fa1957ea700 Delete type=3 #1

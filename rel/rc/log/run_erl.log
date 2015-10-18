@@ -1,0 +1,8 @@
+run_erl [5197] Thu Oct 15 20:24:12 2015
+Args before exec of shell:
+run_erl [5197] Thu Oct 15 20:24:12 2015
+argv[0] = sh
+run_erl [5197] Thu Oct 15 20:24:12 2015
+argv[1] = -c
+run_erl [5197] Thu Oct 15 20:24:12 2015
+argv[2] = exec /home/b-itoh/rc/rel/rc/bin/rc console 
