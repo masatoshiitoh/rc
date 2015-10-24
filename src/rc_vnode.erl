@@ -21,18 +21,27 @@
              start_vnode/1
              ]).
 
--record(state, {partition}).
+-record(state, {partition, pids}).
 
 %% API
 start_vnode(I) ->
     riak_core_vnode_master:get_vnode_pid(I, ?MODULE).
 
 init([Partition]) ->
-    {ok, #state { partition=Partition }}.
+    {ok, #state { partition=Partition, pids=dict:new() }}.
 
 %% Sample command: respond to a ping
 handle_command(ping, _Sender, State) ->
     {reply, {pong, State#state.partition}, State};
+
+%% Name is new comer.
+handle_command({addnew, Name}, _Sender, State) ->
+	NewPid = erlang:make_ref(),
+	NewPids = dict:store(Name, NewPid, State#state.pids),
+    NewState = State#state{pids = NewPids},
+    ?PRINT({addnew_command, Name}),
+    {reply, {{added, NewPid}, State#state.partition}, NewState};
+
 handle_command(Message, _Sender, State) ->
     ?PRINT({unhandled_command, Message}),
     {noreply, State}.

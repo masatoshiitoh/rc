@@ -34,9 +34,11 @@ handle_event({service_update, _Services}, State) ->
     {ok, State}.
 
 handle_call(_Event, State) ->
+    io:format("rc_node_event_handler handle_call: ~p~n",[_Event]),
     {ok, ok, State}.
 
 handle_info(_Info, State) ->
+    io:format("rc_node_event_handler handle_info: ~p~n",[_Info]),
     {ok, State}.
 
 terminate(_Reason, _State) ->
