@@ -42,7 +42,7 @@ handle_command({addnew, Name}, _Sender, State) ->
     ?PRINT({addnew_command, Name}),
     {reply, {{added, NewPid}, State#state.partition}, NewState};
 
-%% Name is new comer.
+%% Find pid associated to Name
 handle_command({lookup, Name}, _Sender, State) ->
 	Pid = dict:fetch(Name, State#state.pids),
     ?PRINT({lookup , Pid}),
