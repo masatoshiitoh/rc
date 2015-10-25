@@ -42,23 +42,34 @@ handle_command({addnew, Name}, _Sender, State) ->
     ?PRINT({addnew_command, Name}),
     {reply, {{added, NewPid}, State#state.partition}, NewState};
 
+%% Name is new comer.
+handle_command({lookup, Name}, _Sender, State) ->
+	Pid = dict:fetch(Name, State#state.pids),
+    ?PRINT({lookup , Pid}),
+    {reply, {{iknowit, Pid}, State#state.partition}, State};
+
 handle_command(Message, _Sender, State) ->
     ?PRINT({unhandled_command, Message}),
     {noreply, State}.
 
 handle_handoff_command(_Message, _Sender, State) ->
+    ?PRINT({handoff_command, _Message}),
     {noreply, State}.
 
 handoff_starting(_TargetNode, State) ->
+    ?PRINT({handoff_starting, _TargetNode}),
     {true, State}.
 
 handoff_cancelled(State) ->
+    ?PRINT({handoff_cancelled, none}),
     {ok, State}.
 
 handoff_finished(_TargetNode, State) ->
+    ?PRINT({handoff_finished, _TargetNode}),
     {ok, State}.
 
 handle_handoff_data(_Data, State) ->
+    ?PRINT({handoff_data, _Data}),
     {reply, ok, State}.
 
 encode_handoff_item(_ObjectName, _ObjectValue) ->

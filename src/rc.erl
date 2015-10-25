@@ -5,12 +5,14 @@
 -export([
 	get_n/0,
 	ping/0,
+	lookup/1,
 	addnew/1
         ]).
 
 -ignore_xref([
 	get_n/0,
 	ping/0,
+	lookup/1,
 	addnew/1
 	]).
 
@@ -31,3 +33,7 @@ addnew(Name) ->
     PrefList = riak_core_apl:get_apl(DocIdx, ?N, rc),
 	riak_core_vnode_master:command(PrefList, {addnew, Name}, rc_vnode_master).
 
+lookup(Name) ->
+    DocIdx = riak_core_util:chash_key({<<"character">>, list_to_binary(Name)}),
+    PrefList = riak_core_apl:get_apl(DocIdx, ?N, rc),
+	riak_core_vnode_master:command(PrefList, {lookup, Name}, rc_vnode_master).
