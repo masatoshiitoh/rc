@@ -1,6 +1,6 @@
 EXAMPLES = hello 
 
-ROOTDIR = ../..
+ROOTDIR = ../../luerl
 SRCDIR  = $(ROOTDIR)/src
 BEAMDIR = $(ROOTDIR)/ebin
 

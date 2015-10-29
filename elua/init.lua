@@ -2,9 +2,5 @@
 -- Purpose : Brief demonstration of Luerl basics - execution of a file.
 -- See     : ./hello.erl
 
-a = a + 1
+a = 0
 
-print("Hello, File!")
-print(a)
-
-return a

@@ -8,14 +8,11 @@
 
 run() ->
 
-    % execute a file
-    {ok, F, State1} = luerl:loadfile("./hello.lua"),
-
-    % separately parse, then execute
-    State0 = luerl:init(),
-    {ok, Chunk, State2} = luerl:do("a=0", State1),
-    {_Ret, State3} = luerl:do(Chunk, State2),
-    {_Ret, State4} = luerl:do(Chunk, State3),
-    {_Ret, _State5} = luerl:do(Chunk, State4),
+    S0 = luerl:init(),
+    {_R0,       S1} = luerl:dofile("./init.lua", S0),
+    {_R1,Chunk1,S2} = luerl:loadfile("./hello.lua", S1),
+    {_R2,       S3} = luerl:do(Chunk1, S2),
+    {_R3,       S4} = luerl:do(Chunk1, S3),
+    {_R4,      _S5} = luerl:do(Chunk1, S4),
 
     done.
