@@ -3,8 +3,8 @@
 
 -export([run/0]).
 
--export([stop/0]).
--export([button/1, get_state/0]).
+-export([stop/1]).
+-export([button/2, get_state/1]).
 -export([locked/2, open/2]).
 
 -export([start_link/1]).
@@ -29,11 +29,13 @@ run() ->
 
 
 
-stop() -> gen_fsm:send_all_state_event(rc_persona, stop).
+stop(Pid) -> gen_fsm:send_all_state_event(Pid, stop).
 
-button(String) -> gen_fsm:send_event(rc_persona, {button, String}).
+button(Pid, String) -> gen_fsm:send_event(Pid, {button, String}).
 
-get_state() -> gen_fsm:sync_send_all_state_event(rc_persona, get_state).
+get_state(Pid) -> gen_fsm:sync_send_all_state_event(Pid, get_state).
+
+
 
 %% "button" event to "locked" state.
 locked({button, String}, {SoFar, Code}) ->
@@ -66,7 +68,7 @@ open(timeout, StateData) ->
 
 
 start_link(Type) ->
-	gen_fsm:start_link({local, rc_persona}, rc_persona, Type, []).
+	gen_fsm:start_link(rc_persona, Type, []).
 
 %% initialize FSM as "locked" state with Code
 init(Code) -> {ok, locked, {[], Code}}.
