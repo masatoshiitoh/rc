@@ -35,18 +35,28 @@ handle_command(ping, _Sender, State) ->
     {reply, {pong, State#state.partition}, State};
 
 %% Name is new comer.
-handle_command({addnew, Name}, _Sender, State) ->
-	NewPid = erlang:make_ref(),
-	NewPids = dict:store(Name, NewPid, State#state.pids),
+handle_command({addnew, Name, Code}, _Sender, State) ->
+	{ok, Pid} = rc_persona:start_link(Code),
+	NewPids = dict:store(Name, Pid, State#state.pids),
     NewState = State#state{pids = NewPids},
-    ?PRINT({addnew_command, Name}),
-    {reply, {{added, NewPid}, State#state.partition}, NewState};
+    ?PRINT({addnew, Name, Code}),
+    {reply, {{addnew, Pid}, State#state.partition}, NewState};
+
+%% Find pid associated to Name
+handle_command({button, Name, Button}, _Sender, State) ->
+	Pid = dict:fetch(Name, State#state.pids),
+	Result = rc_persona:button(Pid, Button),
+    {reply, {{button, Pid}, Result, State#state.partition}, State};
+
+%% Find pid associated to Name
+handle_command({get_state, Name}, _Sender, State) ->
+	Pid = dict:fetch(Name, State#state.pids),
+    {reply, {{get_state, Pid}, State#state.partition}, State};
 
 %% Find pid associated to Name
 handle_command({lookup, Name}, _Sender, State) ->
 	Pid = dict:fetch(Name, State#state.pids),
-    ?PRINT({lookup , Pid}),
-    {reply, {{iknowit, Pid}, State#state.partition}, State};
+    {reply, {{lookup, Pid}, State#state.partition}, State};
 
 handle_command(Message, _Sender, State) ->
     ?PRINT({unhandled_command, Message}),
