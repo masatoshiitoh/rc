@@ -33,6 +33,16 @@ addnew(Name, Code) ->
     PrefList = riak_core_apl:get_apl(DocIdx, ?N, rc),
 	riak_core_vnode_master:command(PrefList, {addnew, Name, Code}, rc_vnode_master).
 
+speak_to(Name, Sender, Message) ->
+    DocIdx = riak_core_util:chash_key({<<"character">>, list_to_binary(Name)}),
+    PrefList = riak_core_apl:get_apl(DocIdx, ?N, rc),
+	riak_core_vnode_master:command(PrefList, {speak_to, Name, Sender, Message}, rc_vnode_master).
+
+attack_to(Name, Sender, Param) ->
+    DocIdx = riak_core_util:chash_key({<<"character">>, list_to_binary(Name)}),
+    PrefList = riak_core_apl:get_apl(DocIdx, ?N, rc),
+	riak_core_vnode_master:command(PrefList, {attack_to, Name, Sender, Param}, rc_vnode_master).
+
 button(Name, Button) ->
     DocIdx = riak_core_util:chash_key({<<"character">>, list_to_binary(Name)}),
     PrefList = riak_core_apl:get_primary_apl(DocIdx, 1, rc),
