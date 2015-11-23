@@ -32,6 +32,7 @@ init([Partition]) ->
 
 %% Sample command: respond to a ping
 handle_command(ping, _Sender, State) ->
+    ?PRINT({ping, State}),
     {reply, {pong, State#state.partition}, State};
 
 %% Name is new comer.
