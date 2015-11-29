@@ -34,7 +34,11 @@
 
 %% add new instance.
 %% returns name
-new_instance(Type) -> "NAME_OF_CHAR".
+new_instance(Type) ->
+	Script = get_script(Type),
+	Name = gen_name(Type),
+	start_new_instance(Name, Script),
+	Name.
 
 %% add or update lua script with ai type name.
 %% returns ok or ng
@@ -54,7 +58,6 @@ get_current() ->[].
 start_watch(Dest) ->ng.
 stop_watch(Dest) ->ng.
 
-
 %% prepare blackboard
 start_blackboard(BBName) -> ng.
 clear_blackboard(BBName) -> ng.
@@ -65,27 +68,6 @@ ping() ->
     PrefList = riak_core_apl:get_primary_apl(DocIdx, 1, rc),
     [{IndexNode, _Type}] = PrefList,
     riak_core_vnode_master:sync_spawn_command(IndexNode, ping, rc_vnode_master).
-
-addnew(Name, Code) ->
-    DocIdx = riak_core_util:chash_key({<<"character">>, list_to_binary(Name)}),
-    PrefList = riak_core_apl:get_apl(DocIdx, ?N, rc),
-	riak_core_vnode_master:command(PrefList, {addnew, Name, Code}, rc_vnode_master).
-
-speak_to(Name, Sender, Message) ->
-    DocIdx = riak_core_util:chash_key({<<"character">>, list_to_binary(Name)}),
-    PrefList = riak_core_apl:get_apl(DocIdx, ?N, rc),
-	riak_core_vnode_master:command(PrefList, {speak_to, Name, Sender, Message}, rc_vnode_master).
-
-attack_to(Name, Sender, Param) ->
-    DocIdx = riak_core_util:chash_key({<<"character">>, list_to_binary(Name)}),
-    PrefList = riak_core_apl:get_apl(DocIdx, ?N, rc),
-	riak_core_vnode_master:command(PrefList, {attack_to, Name, Sender, Param}, rc_vnode_master).
-
-button(Name, Button) ->
-    DocIdx = riak_core_util:chash_key({<<"character">>, list_to_binary(Name)}),
-    PrefList = riak_core_apl:get_primary_apl(DocIdx, 1, rc),
-    [{IndexNode, _Type}] = PrefList,
-	riak_core_vnode_master:sync_command(IndexNode, {button, Name, Button}, rc_vnode_master).
 
 get_state(Name) ->
     DocIdx = riak_core_util:chash_key({<<"character">>, list_to_binary(Name)}),
@@ -98,3 +80,15 @@ lookup(Name) ->
     PrefList = riak_core_apl:get_primary_apl(DocIdx, 1, rc),
     [{IndexNode, _Type}] = PrefList,
 	riak_core_vnode_master:sync_command(IndexNode, {lookup, Name}, rc_vnode_master).
+
+lock_button(Name, Button) ->
+    DocIdx = riak_core_util:chash_key({<<"character">>, list_to_binary(Name)}),
+    PrefList = riak_core_apl:get_primary_apl(DocIdx, 1, rc),
+    [{IndexNode, _Type}] = PrefList,
+	riak_core_vnode_master:sync_command(IndexNode, {button, Name, Button}, rc_vnode_master).
+
+lock_addnew(Name, Code) ->
+    DocIdx = riak_core_util:chash_key({<<"character">>, list_to_binary(Name)}),
+    PrefList = riak_core_apl:get_apl(DocIdx, ?N, rc),
+	riak_core_vnode_master:command(PrefList, {addnew, Name, Code}, rc_vnode_master).
+
