@@ -3,27 +3,29 @@
 -include_lib("riak_core/include/riak_core_vnode.hrl").
 
 -export([
+	run/0,
 	new_instance/1,
 	register_script/2,
 	action/2,
 	get_current/0,
 
 	ping/0,
-	addnew/2,
-	button/2,
+	lock_addnew/2,
+	lock_button/2,
 	get_state/1,
 	lookup/1
 	]).
 
 -ignore_xref([
+	run/0,
 	new_instance/1,
 	register_script/2,
 	action/2,
 	get_current/0,
 
 	ping/0,
-	addnew/2,
-	button/2,
+	lock_addnew/2,
+	lock_button/2,
 	get_state/1,
 	lookup/1
 	]).
@@ -32,6 +34,20 @@
 
 %% @doc Pings a random vnode to make sure communication is functional
 
+
+run() ->
+	% separately parse, then execute
+	State0 = luerl:init(),
+	{ok, Chunk, State1} = luerl:loadfile(
+		filename:join([code:priv_dir(rc), "lua", "simple.lua"])
+		, State0),
+	{_Ret, _NewState} = luerl:do(Chunk, State1),
+
+	done.
+
+
+
+
 %% add new instance.
 %% returns name
 new_instance(Type) ->
@@ -39,6 +55,15 @@ new_instance(Type) ->
 	Name = gen_name(Type),
 	start_new_instance(Name, Script),
 	Name.
+
+get_script(Type) ->
+	"print(\"hello\")".
+
+gen_name(Type) ->
+	"name01".
+
+start_new_instance(Name, Script) ->
+	0.
 
 %% add or update lua script with ai type name.
 %% returns ok or ng
