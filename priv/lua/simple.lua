@@ -14,6 +14,7 @@ function init()
 end
 
 print( init() )
+return init()
 
 
 -- Evaluate (called every eval timing)

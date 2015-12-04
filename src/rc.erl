@@ -41,9 +41,9 @@ run() ->
 	{ok, Chunk, State1} = luerl:loadfile(
 		filename:join([code:priv_dir(rc), "lua", "simple.lua"])
 		, State0),
-	{_Ret, _NewState} = luerl:do(Chunk, State1),
+	{Ret, NewState} = luerl:do(Chunk, State1),
+	Ret.
 
-	done.
 
 
 
