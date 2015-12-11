@@ -10,7 +10,8 @@
 -- Initialize (called at once.)
 
 function init()
-	return "ok", 1, 2
+	return rc.foo(1,2)
+	-- return "ok", 1, 2
 end
 
 print( init() )
@@ -20,7 +21,7 @@ return init()
 -- Evaluate (called every eval timing)
 
 
-
+-- SEE luerl::load_module
 
 
 

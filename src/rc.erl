@@ -38,13 +38,12 @@
 run() ->
 	% separately parse, then execute
 	State0 = luerl:init(),
-	{ok, Chunk, State1} = luerl:loadfile(
+	State1 = luerl:load_module([rc], luerl_rc_base, State0),
+	{ok, Chunk, State2} = luerl:loadfile(
 		filename:join([code:priv_dir(rc), "lua", "simple.lua"])
-		, State0),
-	{Ret, NewState} = luerl:do(Chunk, State1),
+		, State1),
+	{Ret, State3} = luerl:do(Chunk, State2),
 	Ret.
-
-
 
 
 
