@@ -12,6 +12,6 @@ table() ->
      {<<"foo">>,{function,fun foo/2}}].
 
 bar(A,St) ->
-{0, St}.
+{[0], St}.
 foo(A,St) ->
-{0, St}.
+{[0], St}.
