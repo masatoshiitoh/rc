@@ -9,9 +9,11 @@ install(St) ->
 
 table() ->
     [{<<"bar">>,{function,fun bar/2}},
+	 {<<"get_all">>, {function, fun get_all/2}},
      {<<"foo">>,{function,fun foo/2}}].
 
-bar(A,St) ->
+get_all(A,St) ->
 {[0], St}.
-foo(A,St) ->
-{[0], St}.
+
+bar(A,St) -> {[0], St}.
+foo(A,St) -> {[0], St}.
