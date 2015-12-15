@@ -1,4 +1,4 @@
-rc: A Riak Core Application
+easymmo_ai : a persistent AI farm for a massive objects application.
 ======================================
 
 Application Structure
